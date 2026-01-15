@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaiTap1</title>
+</head>
+<body>
+    <h1>Tính BMI </h1>
+    <h3>Nhập dữ liệu Mark</h3>
+    <label for="">Weight : </label>
+    <input type="number" id="markW">
+    <label for="">Height :</label>
+    <input type="number" id="markH">
+
+     <h3>Nhập dữ liệu John</h3>
+    <label for="">Weight : </label>
+    <input type="number" id="johnW">
+    <label for="">Height :</label>
+    <input type="number" id="johnH">
+    <br> <br>
+    <button onclick="BMI()">Tính</button>
+    <h3>Ket qua </h3>
+    <p id="kqM"></p>
+    <p id="kqJ"></p>
+    <p id="compare"></p>
+   <script>
+function BMI(){
+    const markW = parseFloat(document.getElementById("markW").value);
+    const markH = parseFloat(document.getElementById("markH").value);
+    const JohnW = parseFloat(document.getElementById("johnW").value);
+    const JohnH = parseFloat(document.getElementById("johnH").value);
+
+
+    const MarkBMI = markW / (markH ** 2);
+    const JohnBMI = JohnW / (JohnH ** 2);
+
+    document.getElementById("kqM").innerText =
+        `Mark BMI: ${MarkBMI.toFixed(2)}`;
+
+    document.getElementById("kqJ").innerText =
+        `John BMI: ${JohnBMI.toFixed(2)}`;
+
+    if (MarkBMI > JohnBMI) {
+        document.getElementById("compare").innerText =
+            `Mark có BMI cao hơn John (${(MarkBMI - JohnBMI).toFixed(2)})`;
+    } else if (MarkBMI < JohnBMI) {
+        document.getElementById("compare").innerText =
+            `John có BMI cao hơn Mark (${(JohnBMI - MarkBMI).toFixed(2)})`;
+    } else {
+        document.getElementById("compare").innerText =
+            "Mark và John có BMI bằng nhau";
+    }
+}
+</script>
+
+
+</body>
+</html>

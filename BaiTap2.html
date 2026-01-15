@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bai Tap 2</title>
+</head>
+<body>
+  <h1>So sánh BMI</h1>
+
+  <h3>Mark</h3>
+  <label>Weight: </label>
+  <input type="number" id="markMass"><br><br>
+  <label>Height: </label>
+  <input type="number" step="0.01" id="markHeight"><br><br>
+
+  <h3>John</h3>
+  <label>Weight: </label>
+  <input type="number" id="johnMass"><br><br>
+  <label>Height: </label>
+  <input type="number" step="0.01" id="johnHeight"><br><br>
+
+  <button onclick="sosanhBMI()">So sanh</button>
+
+  <h2 id="result"></h2>
+  
+<script>
+  function sosanhBMI() {
+    const markMass = Number(document.getElementById("markMass").value);
+    const markHeight = Number(document.getElementById("markHeight").value);
+    const johnMass = Number(document.getElementById("johnMass").value);
+    const johnHeight = Number(document.getElementById("johnHeight").value);
+
+    const markBMI = markMass / markHeight ** 2;
+    const johnBMI = johnMass / johnHeight ** 2;
+
+    if (markBMI > johnBMI) {
+      console.log(`Mark's BMI (${markBMI.toFixed(1)}) cao hơn John's (${johnBMI.toFixed(1)})!`);
+    } else {
+      console.log(`John's BMI (${johnBMI.toFixed(1)}) cao hơn Mark's (${markBMI.toFixed(1)})!`);
+    }
+  }
+</script>
+
+
+</body>
+</html>

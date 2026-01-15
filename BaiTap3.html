@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BaiTap3</title>
+</head>
+<body>
+  <h1>So sánh điểm 2 đội</h1>
+
+  <h3>Dolphins</h3>
+  <label for="d1">Game 1:</label>
+  <input type="number" id="d1"><br><br>
+
+  <label for="d2">Game 2:</label>
+  <input type="number" id="d2"><br><br>
+
+  <label for="d3">Game 3:</label>
+  <input type="number" id="d3"><br><br>
+
+  <h3>Koalas</h3>
+  <label for="k1">Game 1:</label>
+  <input type="number" id="k1"><br><br>
+
+  <label for="k2">Game 2:</label>
+  <input type="number" id="k2"><br><br>
+
+  <label for="k3">Game 3:</label>
+  <input type="number" id="k3"><br><br>
+
+  <button onclick="checkWinner()">Kiểm tra</button>
+
+  <script>
+    function checkWinner() {
+      const d1 = Number(document.getElementById("d1").value);
+      const d2 = Number(document.getElementById("d2").value);
+      const d3 = Number(document.getElementById("d3").value);
+
+      const k1 = Number(document.getElementById("k1").value);
+      const k2 = Number(document.getElementById("k2").value);
+      const k3 = Number(document.getElementById("k3").value);
+
+      const dolphinsAvg = (d1 + d2 + d3) / 3;
+      const koalasAvg = (k1 + k2 + k3) / 3;
+
+      console.log("Dolphins avg:", dolphinsAvg.toFixed(1));
+      console.log("Koalas avg:", koalasAvg.toFixed(1));
+
+      if (dolphinsAvg > koalasAvg && dolphinsAvg >= 100) {
+        console.log("Dolphins thắng!");
+      } else if (koalasAvg > dolphinsAvg && koalasAvg >= 100) {
+        console.log("Koalas thắng!");
+      } else if (dolphinsAvg === koalasAvg && dolphinsAvg >= 100) {
+        console.log("Hai đội hòa!");
+      } else {
+        console.log("Không đội nào đủ điều kiện thắng!");
+      }
+    }
+  </script>
+
+</body>
+</html>
